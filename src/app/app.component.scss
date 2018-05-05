@@ -1,0 +1,50 @@
+.table th, .table td{
+    padding:4px;
+    height: 15px;
+    font-size:12px;
+}
+
+.bg-dark {
+    background-color: #424242!important;
+}
+
+.jumbotron{
+    margin:0 auto;
+    background: #fff;
+}
+
+.jumbotron.jb-lg{
+    width:100%;
+}
+
+.table-header{
+    margin-bottom: 14px;
+    float: left;
+    width: 100%;
+}
+
+.table-row{
+    -webkit-transition: height 0.4s, background-color 0.1s, opacity 0.2s, -webkit-transform 0.4s;
+    transition: height 0.4s, background-color 0.1s, opacity 0.2s, -webkit-transform 0.4s;
+    transition: transform 0.4s, height 0.4s, background-color 0.1s, opacity 0.2s;
+    transition: transform 0.4s, height 0.4s, background-color 0.1s, opacity 0.2s, -webkit-transform 0.4s;
+}
+
+.search-form{
+    position: relative;
+    width:100%;
+}
+
+.icon-search{
+        position: absolute;
+    top: 6px;
+    right: 0;
+}
+
+.fa{
+    color: #333;
+}
+
+.col-md-6{
+    float:left;
+}

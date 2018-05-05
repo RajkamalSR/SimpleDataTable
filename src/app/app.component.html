@@ -1,0 +1,79 @@
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="#">Fixed navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+      aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Disabled</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<div class="container">
+  <div class="row">
+
+    <div class="jumbotron jb-lg">
+
+     <div class="table-header">
+		  <div class="col-md-6">
+        <div class="row">
+          <h4 class="headline">Table</h4>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="row">
+          <div class="search-form">
+            <input type="text" [(ngModel)]="searchText" class="form-control" placeholder="Search by Category" />
+            <i class="fa fa-search icon-search"></i>
+          </div>
+        </div>
+      </div>
+	 </div>
+
+
+
+      <table class="table table-strip">
+        <thead>
+          <tr>
+            <th class="pointer" (click)="sort('CategoryID')">
+              Category ID
+              <i class="fa" [ngClass]="{'fa-sort': column != 'CategoryID', 'fa-sort-asc': (column == 'CategoryID' && isDesc), 'fa-sort-desc': (column == 'CategoryID' && !isDesc) }"
+                aria-hidden="true"> </i>
+            </th>
+            <th class="pointer" (click)="sort('CategoryName')">
+              Category
+              <i class="fa" [ngClass]="{'fa-sort': column != 'CategoryName', 'fa-sort-asc': (column == 'CategoryName' && isDesc), 'fa-sort-desc': (column == 'CategoryName' && !isDesc) }"
+                aria-hidden="true"> </i>
+            </th>
+            <th class="pointer" (click)="sort('Description')">
+              Description
+              <i class="fa" [ngClass]="{'fa-sort': column != 'Description', 'fa-sort-asc': (column == 'Description' && isDesc), 'fa-sort-desc': (column == 'Description' && !isDesc) }"
+                aria-hidden="true"> </i>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="table-row" *ngFor="let item of records | category: searchText | orderby: {property: column, direction: direction}">
+            <td>{{item.CategoryID}}</td>
+            <td>{{item.CategoryName}}</td>
+            <td>{{item.Description}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+  </div>
+</div>
